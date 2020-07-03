@@ -1,0 +1,15 @@
+rancher:
+    services:
+      firefly:
+        image: jc5x/firefly-iii
+        container_name: firefly
+        restart: always
+        environment:
+          PUID: 1020
+          PGID: 1020
+          TZ: Europe/Stockholm
+        volumes:
+        - /mnt/nfs-1/config/heimdall:/config
+        ports:
+        - 5555:80
+        - 5443:443
